@@ -1,0 +1,153 @@
+Sub Calculator()
+    Dim a As Integer
+    Dim b As Integer
+    Dim sum As Integer
+    Dim diff As Integer
+    Dim prod As Integer
+    Dim div As Integer
+    
+    a = InputBox("Enter the first number")
+    b = InputBox("Enter the second number")
+    
+    [h26].Value = "input no. are"
+    [j26].Value = a
+    [k26].Value = b
+    
+    [j27].Value = "a + b"
+    [j28].Value = "a - b"
+    [j29].Value = "a * b"
+    [j30].Value = "a / b"
+    
+    [k27].Value = a + b
+    [k28].Value = a - b
+    [k29].Value = a * b
+    [k30].Value = a / b
+    
+End Sub
+
+
+Sub if_else()
+    Dim age As Integer
+    age = InputBox("Enter your age")
+    If age >= 18 Then
+    MsgBox "Eligible"
+    
+    ElseIf age = 0 Then
+    MsgBox "Enter correct value"
+    
+    Else
+    MsgBox "You are not Eligible"
+    
+    End If
+End Sub
+
+
+Sub grade()
+    Dim marks As Integer
+    
+    marks = ActiveCell.Value
+    If marks > 90 And marks <= 100 Then
+    ActiveCell(1, 2).Value = "A"
+    ActiveCell(1, 2).HorizontalAlignment = xlCenter
+    ActiveCell(1, 2).Interior.color = RGB(0, 255, 0)
+    
+    ElseIf marks >= 70 And marks <= 90 Then
+    ActiveCell(1, 2).Value = "B"
+    ActiveCell(1, 2).HorizontalAlignment = xlCenter
+    ActiveCell(1, 2).Interior.color = RGB(0, 255, 0)
+    
+    Else
+    ActiveCell(1, 2).Value = "C"
+    ActiveCell(1, 2).HorizontalAlignment = xlCenter
+    ActiveCell(1, 2).Interior.color = RGB(0, 255, 0)
+    
+    End If
+End Sub
+
+
+Sub fav_color()
+    Dim color As String
+    MsgBox "Please select your color among Red, Orange, Green, Black"
+    color = InputBox("Enter your color", "Favourite color")
+    
+    Select Case color
+      Case "Red"
+      MsgBox "Passion, Love, Anger"
+      
+      Case "Orange"
+      MsgBox "Energy, Happiness"
+      
+      Case "Black"
+      MsgBox "Mystery, Elegance, Evil"
+      
+      Case "Green"
+      MsgBox "practical, peaceful, and down-to-earth"
+      
+      Case Else
+      MsgBox "None of the above"
+      
+    End Select
+End Sub
+
+
+Sub with_use()
+  With ActiveCell.Font
+    .Bold = True
+    .Size = 15
+    .Name = "Verdena"
+    .Italic = True
+  End With
+End Sub
+
+
+Sub string_funs()
+    
+    'Range("a46").Offset(, 1).Value = LCase([a46].Value)
+    'Range("a46").Offset(, 2).Value = UCase([a46].Value)
+    'Range("a46").Offset(, 3).Value = Application.WorksheetFunction.Proper([a46].Value)
+    
+    With Range("a46")
+        .Offset(, 1).Value = LCase([a46].Value)
+        .Offset(, 2).Value = UCase([a46].Value)
+        .Offset(, 3).Value = Application.WorksheetFunction.Proper([a46].Value)
+        .Offset(, 4).Value = Len([a46].Value)
+    End With
+    
+    ' trim, space, replace
+    With Range("a47")
+        .Value = Space(3) & [a46].Value
+        .Offset(, 1).Value = Trim(Space(3) & [a46].Value)
+        .Offset(, 2).Value = Space(5) & [a46].Value
+        .Offset(, 3).Value = Replace([a46].Value, "a", "aa")
+        
+    End With
+    
+    ' instr, strrev, strreverse
+    With Range("a48")
+        .Offset(, 1).Value = InStr([a48].Value, "@")
+        .Offset(, 2).Value = InStrRev([a48].Value, "@")
+        .Offset(, 3).Value = StrReverse([a46].Value)
+        
+    End With
+    
+    Dim email As String
+    email = InputBox("Enter your mail to check")
+    If InStr(email, "@") = 0 Then
+    MsgBox "Invalid email"
+    Else
+    MsgBox "continue"
+    End If
+    
+    'right, left, mid
+    MsgBox Left(email, 5)
+    MsgBox Right(email, 5)
+    MsgBox Mid(email, 5, 3) 'from 5th character extract 3 letters
+    Dim full_name As String
+    ' full_name = InputBox("Enter your name")
+    ' MsgBox "first name and last name are"
+    'Space posi = InStr(full_name, " ")
+    'first name is
+    ' MsgBox Left(full_name, InStr(full_name, " ") - 1)
+    'last name is
+    ' MsgBox Right(full_name, Len(full_name) - Len(Left(full_name, InStr(full_name, " ") - 1)))
+End Sub
