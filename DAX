@@ -1,0 +1,3 @@
+--  Calculated Column
+-- Combine two columns
+[col 1] & "-" & [col 2]   -> Hello-World
