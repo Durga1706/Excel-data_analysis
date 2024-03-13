@@ -1,3 +1,26 @@
---  Calculated Column
--- Combine two columns
+##  Calculated Column
+### Combine two columns
 [col 1] & "-" & [col 2]   -> Hello-World
+[col1 ] - [col 2]   -> subtract columns
+
+### Measure 
+When we have measure it can be used everywhere, if in future column name changes we can edit that in measure it will be updated everywhere
+we have a column called Sales, in 10 charts if we used sum of sales it has to be updated 10 times if Sales name changes in future
+
+Sum([col])
+Sum([col 1]) - Sum([col 2])
+
+### Previous year sales
+calculate( Sum([Sales Amount]), SAMEPERIODLASTYEAR([Date]) )
+
+## Filter Context
+
+
+## Row Context
+### measuring each row, not used in measures only used in calculated columns
+if([Age]>=18, "Can Vote", "Can't vote")
+
+
+## Calculate Function
+Chennai Sales= calculate( Sum([Sales]), location= "Chennai")
+All loc Sales= calculate( Sum([Sales]), all(location))
