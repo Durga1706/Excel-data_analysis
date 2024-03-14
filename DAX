@@ -13,6 +13,36 @@ Sum([col 1]) - Sum([col 2])
 ### Previous year sales
 calculate( Sum([Sales Amount]), SAMEPERIODLASTYEAR([Date]) )
 
+
+## Most used DAX functions
+### Aggregated Function
+sum/ sumx
+average/ averagex
+min/ minx
+max/ maxx
+count/ distinctcount
+
+### Filter Function
+calculate
+filter
+all/ allexcept
+keepfilters/ removefilter
+lookupvalue
+
+### Time Intelligence & Date Time
+totalytd/ totalqtd/ totalmtd
+dateadd/ datesbetween/ datesinperiod
+firstdate/ lastdate
+year/ month/ day
+today/ eomonth
+
+### Relationship & Others
+related/ relatedtable/ userelationship
+isblank/ hasonevalue/ username
+summarize/ group by
+treats
+rankx
+
 ## Filter Context
 
 
