@@ -1,3 +1,33 @@
+# Charts: When and When not
+## Bar chart:
+   * When: To compare data across categories
+   * When not: If there are too many categories or if the data is continuous
+   * Type: Categorical, quantitative
+
+## Line chart:
+   * When: To show trend over time 
+   * When not: When there is no relationship between data points
+   * Type: Continuous, time series
+
+## Donut chart:
+   * When: To show the proportion of each category
+   * When not: If there are too many categories or comparing data across groups
+   * Type: Categorical, proportional
+
+## Scatter plot:
+   * When: To display the relationship between two variables
+   * When not: If there is irrelavant relation or comparing multiple categories
+   * Type: Continuous, bivariate
+
+## Bar chart:
+   * When: To compare data across categories
+   * When not: If there are too many categories or if the data is continuous
+   * Type: Categorical, quantitative
+
+
+
+
+
 ##  Calculated Column
 ### Combine two columns
 [col 1] & "-" & [col 2]   -> Hello-World
