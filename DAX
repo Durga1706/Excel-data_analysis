@@ -52,6 +52,30 @@ min/ minx
 max/ maxx
 count/ distinctcount
 
+## Ref: https://www.youtube.com/watch?v=LQBUhnT6ITI
+## Calender
+### calendarauto(): returns a single column named 'Date' that contains a contiguous set of dates. The range of dates is calculated automatically based on data in the model.
+syntax: calendarauto() : generates date based on our model
+        calendarauto([fiscal_year_end_month]): dax expression that returns an integer from 1 to 12
+
+If our date column has min date: 1-3-2023, max date: 1-3-2024
+Start date: 1st month and day of min data year(1-1-2023)
+End date: last month and day of max data year(31-12-2024)
+
+fiscal_year_end_month can't be end before max date in data model
+If our date is 31/12/2022, calendarauto(3)  then 31/3/2023 since our fiscal_year_end_month< max_date 
+                           calendarauto(1)  then 31/1/2023 since our fiscal_year_end_month< max_date 
+               1/3/2022,   calendarauto(3)  then 31/3/2022 since our fiscal_year_end_month= max_date 
+
+Note: Date column should exist in our data model, otherwise it will give error
+
+### calendar(): returns a single column named 'Date' that contains a contiguous set of dates.
+syntax: calendar(<start_date>, <end_date>)
+Eg: calendar(date(2022,01,01), date(2022,12,31))  :- date(yy,mm,dd)
+    calendar(date(2022,01,01), date(2022,12,40)) : generates dates from 2022 jan 1 to 2023 jan 9; 40-31=9 adds 9 days next month
+
+
+
 ### Filter Function
 calculate
 filter
