@@ -75,6 +75,35 @@ Eg: calendar(date(2022,01,01), date(2022,12,31))  :- date(yy,mm,dd)
     calendar(date(2022,01,01), date(2022,12,40)) : generates dates from 2022 jan 1 to 2023 jan 9; 40-31=9 adds 9 days next month
 
 
+### now vs today
+now returns current date and time, but today gives current date
+
+### date diff
+Let's say we have two date columns order date, end date
+Day diff:-  datediff( restaurent[order date], restaurent[end date], day)- it will give how many days are between start and end date
+week diff:- datediff( restaurent[order date], restaurent[end date], week)- it will give how many weeks are between start and end date
+month diff:- datediff( restaurent[order date], restaurent[end date], month)- it will give how many months are between start and end date
+
+Similarly we have quarter, year, second, hour, minute difference
+
+### time vs timevalue
+time Converts hours, minutes, and seconds given as numbers to a time in datetime format.
+timevalue Converts a time in text format to a time in datetime format.
+
+Syntax: TIME(hour, minute, second)
+Syntax: TIMEVALUE(time_text)
+
+### EDATE
+returns the date that is the indicated no.of months before or after the start date
+edate(1/1/2023, 1) returns 1 month after the date i.e, 1/2/2023
+Syntax: EDATE(<start_date>, <months>)
+
+### EOMONTH
+Syntax: EOMONTH(<start_date>, <months>)
+Returns the date in datetime format of the last day of the month, before or after a specified number of months.
+
+eomonth(1/1/2020, 1) returns 28/2/2020 it returns next 1 month end  i.e feb last date
+eomonth(2/1/2020, 2) returns 31/3/2020 it returns next 2 months end  i.e mar last date
 
 ### Filter Function
 calculate
