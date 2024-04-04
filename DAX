@@ -53,7 +53,9 @@ calculate( Sum([Sales Amount]), SAMEPERIODLASTYEAR([Date]) )
 2. average/ averagex
 3. min/ minx
 4. max/ maxx
-5. count/ distinctcount
+5. count/ distinctcount: 
+   count: ignores blank values
+   countdistinct counts blank values but all at one time only 
 
 
 
