@@ -26,8 +26,6 @@
 
 
 
-
-
 ##  Calculated Column
 ### Combine two columns
 [col 1] & "-" & [col 2]   -> Hello-World
@@ -46,11 +44,28 @@ calculate( Sum([Sales Amount]), SAMEPERIODLASTYEAR([Date]) )
 
 ## Most used DAX functions
 ### Aggregated Function
-sum/ sumx
-average/ averagex
-min/ minx
-max/ maxx
-count/ distinctcount
+1. sum/ sumx: 
+
+    sum requires a single column, sumx requires table and an expression
+    
+    Eg. sum(Sales), sumx(Sales, sp-cp)
+
+2. average/ averagex
+3. min/ minx
+4. max/ maxx
+5. count/ distinctcount
+
+
+
+## Extract full month, day, year using format
+month= format(doj, "MMMM") -> January, 3 M's for Jan
+day format(doj, "DDDD")   -> Sunday
+year= format(doj, "YYYY") ->2024, 2 Y's for 24
+
+
+# if
+if(Sales[DAY] in {"Sat", "Sun"}, "Weekend", "Regular")
+
 
 ## Ref: https://www.youtube.com/watch?v=LQBUhnT6ITI
 ## Calender
@@ -105,6 +120,8 @@ Returns the date in datetime format of the last day of the month, before or afte
 eomonth(1/1/2020, 1) returns 28/2/2020 it returns next 1 month end  i.e feb last date
 eomonth(2/1/2020, 2) returns 31/3/2020 it returns next 2 months end  i.e mar last date
 
+
+
 ### Filter Function
 calculate
 filter
@@ -125,6 +142,9 @@ isblank/ hasonevalue/ username
 summarize/ group by
 treats
 rankx
+
+
+
 
 ## Filter Context
 
