@@ -55,14 +55,23 @@ calculate( Sum([Sales Amount]), SAMEPERIODLASTYEAR([Date]) )
 4. max/ maxx
 5. count/ distinctcount: 
    count: ignores blank values
-   countdistinct counts blank values but all at one time only 
+   distinctcount counts blank values but all at one time only, if I have r, r, a, j, , , m distinctcount gives 4 as we have 4(r, a, j, ) distinct rows 
 
 
+## Text functions
+   ### Trim: removes spaces from text except for single spaces between words
+   ### Upper & lower: text to upper and lower
+   ### Concatenate: joinse two text strings into one
+   ### "&": joins/ concatenate two or more strings to a single piece of code, 6/1/2023 to Jan-06-2023 then [month]&"-"&[date]&"-"[year]
+   ### exact: returns True if two text strings matches
 
 ## Extract full month, day, year using format
 month= format(doj, "MMMM") -> January, 3 M's for Jan
 day format(doj, "DDDD")   -> Sunday
 year= format(doj, "YYYY") ->2024, 2 Y's for 24
+
+
+year(Sales[Date]) -> returns year
 
 
 # if
@@ -131,6 +140,8 @@ all/ allexcept
 keepfilters/ removefilter
 lookupvalue
 
+
+
 ### Time Intelligence & Date Time
 totalytd/ totalqtd/ totalmtd
 dateadd/ datesbetween/ datesinperiod
@@ -144,7 +155,6 @@ isblank/ hasonevalue/ username
 summarize/ group by
 treats
 rankx
-
 
 
 
