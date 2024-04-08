@@ -132,6 +132,13 @@ eomonth(1/1/2020, 1) returns 28/2/2020 it returns next 1 month end  i.e feb last
 eomonth(2/1/2020, 2) returns 31/3/2020 it returns next 2 months end  i.e mar last date
 
 
+### SAMEPERIODLASTYEAR():- it only gives last year data 
+Eg. calculate(sum(fin[Profit]), sameperiodlastyear(fin[Date].[Date])) -> it gives profit for each date in last year
+
+### DATEADD
+As SAMEPERIODLASTYEAR() is only for 1 year which shifts backwards, but this function is used for shifting the dates(year, month, quarter, day) as per our requirement.
+calculate(sum(fin[Profit]), dateadd(fin[Date].[Date], -1, YEAR))
+
 
 ### Filter Function
 calculate
